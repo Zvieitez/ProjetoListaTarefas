@@ -17,10 +17,6 @@ namespace ProjetoListaTarefas.Models
         public DateTime DtFim { get; set; }
 
         [Display(Name = "Status da Tarefa")]
-        public string? StatusTarefa { get; set; }   
-
-
-
+        public string? StatusTarefa { get; set; }
     }
-
 }

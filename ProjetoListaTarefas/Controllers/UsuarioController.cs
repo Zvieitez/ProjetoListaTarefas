@@ -10,7 +10,9 @@ namespace ProjetoListaTarefas.Controllers
         private static List<Usuario> _usuario = new List<Usuario>()
         {
             new Usuario { UsuarioId= 1, NomeUsuario="Zandra Vieitez" },
-            new Usuario { UsuarioId= 2, NomeUsuario="Lucas Vieitez" },
+            new Usuario { UsuarioId= 2, NomeUsuario="Lucas Almeida" },
+            new Usuario { UsuarioId= 3, NomeUsuario="Ângelo Polatto" },
+            new Usuario { UsuarioId= 4, NomeUsuario="Lêda Almeida" },
         };
 
         public IActionResult Index()
@@ -18,18 +20,17 @@ namespace ProjetoListaTarefas.Controllers
             return View(_usuario);
         }
 
-        [HttpGet] //anotação de pegar
+        [HttpGet] 
         public IActionResult Create()
         {
             return View();
         }
 
-        [HttpPost] //anotação de enviar | qdo não coloca a anotação, o defaul é [HttpGet]
-        public IActionResult Create(Usuario usuario) //recebe os dados do formulário
+        [HttpPost] 
+        public IActionResult Create(Usuario usuario) 
         {
             if (ModelState.IsValid)
             {
-                //ternário: se o valor de _clienteId>0 então some +1 a _clienteId, se não tem, o _clienteID é 1
                 usuario.UsuarioId = _usuario.Count > 0 ? _usuario.Max(u => u.UsuarioId) + 1 : 1;
                 _usuario.Add(usuario);
             }

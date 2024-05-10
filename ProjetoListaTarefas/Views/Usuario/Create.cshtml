@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
 
 }
 @model Usuario
@@ -7,10 +6,12 @@
 <h2>Adicionar Usuário</h2>
 
 <form asp-action="Create" method="post">
-    <div class="form-group">
-        <label asp-for="NomeUsuario" class="control-label"></label>
-        <input asp-for="NomeUsuario" class="form-control" />
-        <span asp-validation-for="NomeUsuario" class="text-danger"></span>
+    <div class="col-md">
+        <div class="form-group col-md-4">
+            <label asp-for="NomeUsuario" class="control-label"></label>
+            <input asp-for="NomeUsuario" class="form-control" />
+            <span asp-validation-for="NomeUsuario" class="text-danger"></span>
+        </div>
     </div>
     <br />
     <button type="submit" class="btn btn-primary">Adicionar</button>

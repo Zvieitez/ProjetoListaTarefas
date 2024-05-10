@@ -1,0 +1,45 @@
+﻿@{
+
+}
+@model RelatorioTarefas
+
+<h2>Adicionar Relatório</h2>
+
+<form asp-action="Create" method="post">
+    <div class="col-md">
+        <div class="form-group col-md-4">
+            <div class="form-group">
+                <label asp-for="NomeRelatorio" class="control-label"></label>
+                <input asp-for="NomeRelatorio" class="form-control" />
+                <span asp-validation-for="NomeRelatorio" class="text-danger"></span>
+            </div>
+        </div>
+
+        <br />
+        <div class="dropdown">
+            <label asp-for="StatusTarefa" class="control-label"></label>
+            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Selecione
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#" onclick="updateStatus('To Do')">To Do</a></li>
+                <li><a class="dropdown-item" href="#" onclick="updateStatus('Doing')">Doing</a></li>
+                <li><a class="dropdown-item" href="#" onclick="updateStatus('Done')">Done</a></li>
+            </ul>
+            <input asp-for="StatusTarefa" class="dropdown" style="display: none;" />
+        </div>
+        <span asp-validation-for="StatusTarefa" class="text-danger"></span>
+        <br />
+
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+        <a asp-action="Index" value="Create" class="btn btn-secondary">Voltar</a>
+
+</form>
+
+<script>
+    function updateStatus(status) {
+        var statusInput = document.querySelector('input[name="StatusTarefa"]');
+        statusInput.value = status;
+    }
+</script>
+

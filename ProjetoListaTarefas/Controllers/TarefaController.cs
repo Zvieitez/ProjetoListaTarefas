@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoListaTarefas.Models;
-using ProjetoListaTarefas.Models;
+
 
 namespace ProjetoListaTarefas.Controllers
 {
@@ -9,9 +9,9 @@ namespace ProjetoListaTarefas.Controllers
 
         private static List<Tarefa> _tarefa = new List<Tarefa>()
         {
-            new Tarefa { TarefaId= 1, NomeTarefa="Definir Tarefa", Descricao="Definir Ações", StatusTarefa="To Do" },
-            new Tarefa { TarefaId= 2, NomeTarefa="Fazendo Tarefa", Descricao="Definir Ações", StatusTarefa="Doing" },
-            new Tarefa { TarefaId= 3, NomeTarefa="Tarefa Finalizada", Descricao="Definir Ações", StatusTarefa="Done" }
+            new Tarefa { TarefaId= 1, NomeTarefa="Definir Tarefa", Descricao="Definir Ações", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="To Do" },
+            new Tarefa { TarefaId= 2, NomeTarefa="Fazendo Tarefa", Descricao="Definir Ações", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="Doing" },
+            new Tarefa { TarefaId= 3, NomeTarefa="Tarefa Finalizada", Descricao="Definir Ações", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="Done" }
         };
 
         public IActionResult Index()
@@ -19,18 +19,17 @@ namespace ProjetoListaTarefas.Controllers
             return View(_tarefa);
         }
 
-        [HttpGet] //anotação de pegar
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
-        [HttpPost] //anotação de enviar | qdo não coloca a anotação, o defaul é [HttpGet]
-        public IActionResult Create(Tarefa tarefa) //recebe os dados do formulário
+        [HttpPost]
+        public IActionResult Create(Tarefa tarefa)
         {
             if (ModelState.IsValid)
             {
-                //ternário: se o valor de _clienteId>0 então some +1 a _clienteId, se não tem, o _clienteID é 1
                 tarefa.TarefaId = _tarefa.Count > 0 ? _tarefa.Max(t => t.TarefaId) + 1 : 1;
                 _tarefa.Add(tarefa);
             }
@@ -58,7 +57,6 @@ namespace ProjetoListaTarefas.Controllers
             {
                 return NotFound();
             }
-
             return View(tarefa);
         }
 
@@ -71,6 +69,10 @@ namespace ProjetoListaTarefas.Controllers
                 if (existingTarefa != null)
                 {
                     existingTarefa.NomeTarefa = tarefa.NomeTarefa;
+                    existingTarefa.Descricao = tarefa.Descricao;
+                    existingTarefa.DtInicio = tarefa.DtInicio;
+                    existingTarefa.DtFim = tarefa.DtFim;
+                    existingTarefa.StatusTarefa = tarefa.StatusTarefa;
                 }
                 return RedirectToAction("Index");
             }
@@ -86,8 +88,6 @@ namespace ProjetoListaTarefas.Controllers
                 return NotFound();
             }
             return View(tarefa);
-
         }
-
     }
 }

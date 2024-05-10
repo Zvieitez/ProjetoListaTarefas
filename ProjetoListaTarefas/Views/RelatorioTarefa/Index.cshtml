@@ -1,0 +1,35 @@
+﻿ @model List<RelatorioTarefas>
+
+<h2>Relatórios</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Adicionar Relatório</a>
+    <a asp-action="Create" class="btn btn-secondary">Voltar</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Relatório Id</th>
+            <th>Nome do Relatório</th>          
+            <th>Status da Tarefa</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var relatorio in Model)
+        {
+            <tr>
+                <td>@relatorio.RelatorioId</td>
+                <td>@relatorio.NomeRelatorio</td>
+                <td>@relatorio.StatusTarefa</td>
+                <td>
+                    <a asp-action="Detalhes" class="btn btn-info" asp-route-id="@relatorio.RelatorioId">Detalhes</a>
+                    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@relatorio.RelatorioId">Editar</a>
+                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@relatorio.RelatorioId">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

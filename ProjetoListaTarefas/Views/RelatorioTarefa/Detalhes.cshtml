@@ -1,0 +1,17 @@
+﻿
+@model RelatorioTarefas 
+
+<h2>Detalhes do Relatório</h2>
+
+Id: @Model.RelatorioId
+<br />
+Nome da Tarefa: @Model.NomeRelatorio
+<br />
+<br />
+<a asp-action="Delete" asp-route-id="@Model.RelatorioId" class="btn btn-danger">Deletar</a>
+<a asp-action="Index" class="btn btn-secondary" type="submit">Voltar</a>
+
+
+
+
+
