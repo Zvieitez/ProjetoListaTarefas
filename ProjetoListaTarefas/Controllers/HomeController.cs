@@ -15,7 +15,11 @@ namespace ProjetoListaTarefas.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var images = new List<ImageModel>
+            {
+                new ImageModel{ ImagePath = "img/Foto01.jpg"},
+            };
+            return View(images);
         }
 
         public IActionResult Privacy()

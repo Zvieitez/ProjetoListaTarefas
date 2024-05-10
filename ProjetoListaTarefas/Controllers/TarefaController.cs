@@ -11,7 +11,8 @@ namespace ProjetoListaTarefas.Controllers
         {
             new Tarefa { TarefaId= 1, NomeTarefa="Definir Tarefa", Descricao="Definir Ações", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="To Do" },
             new Tarefa { TarefaId= 2, NomeTarefa="Fazendo Tarefa", Descricao="Definir Ações", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="Doing" },
-            new Tarefa { TarefaId= 3, NomeTarefa="Tarefa Finalizada", Descricao="Definir Ações", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="Done" }
+            new Tarefa { TarefaId= 3, NomeTarefa="Tarefa Finalizada", Descricao="Definir Ações", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="Done" },
+            new Tarefa { TarefaId= 4, NomeTarefa="Tarefa a Implementar", Descricao="Definir Ações", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="Ice Box" }
         };
 
         public IActionResult Index()
