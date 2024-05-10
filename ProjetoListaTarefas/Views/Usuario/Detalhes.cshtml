@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model Usuario //anotação para utilizar a classe Cliente
+
+<h2>Detalhes do Usuário</h2>
+
+Id: @Model.UsuarioId
+<br />
+Nome do Usuário: @Model.NomeUsuario
+<br />
+
+<a asp-action="Delete" asp-route-id="@Model.UsuarioId" class="btn btn-sm btn-danger">Deletar Registro</a>
+
+
+
+
+
+
+

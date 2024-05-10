@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model Tarefa //anotação para utilizar a classe Cliente
+
+<h2>Detalhes da Tarefa</h2>
+
+Id: @Model.TarefaId
+<br />
+Nome da Tarefa: @Model.NomeTarefa
+<br />
+Descrição: @Model.Descricao
+<br />
+<br />
+<a asp-action="Delete" asp-route-id="@Model.TarefaId" class="btn btn-sm btn-danger">Deletar Registro</a>
+
+
+
+
+
+
+
