@@ -3,7 +3,8 @@
 <h2>Lista de Tarefas</h2>
 
 <p>
-    <a asp-action="Create">Adicionar Tarefa</a>
+    <a asp-action="Create" class="btn btn-primary">Adicionar Tarefa</a>
+    <a asp-action="Create" class="btn btn-secondary">Voltar</a>
 </p>
 
 <table class="table">
@@ -29,9 +30,9 @@
                 <td>@tarefa.DtFim</td>
                 <td>@tarefa.StatusTarefa</td>
                 <td>
-                    <a asp-action="Detalhes" asp-route-id="@tarefa.TarefaId">Detalhes</a>
-                    <a asp-action="Edit" asp-route-id="@tarefa.TarefaId">Editar</a>
-                    <a asp-action="Delete" asp-route-id="@tarefa.TarefaId">Deletar</a>
+                    <a asp-action="Detalhes" class="btn btn-info" asp-route-id="@tarefa.TarefaId">Detalhes</a>
+                    <a asp-action="Edit" class="btn btn-warning" asp-route-id="@tarefa.TarefaId">Editar</a>
+                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@tarefa.TarefaId">Deletar</a>
                 </td>
             </tr>
         }
