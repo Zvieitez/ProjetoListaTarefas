@@ -9,10 +9,12 @@ namespace ProjetoListaTarefas.Controllers
 
         private static List<Tarefa> _tarefa = new List<Tarefa>()
         {
-            new Tarefa { TarefaId= 1, NomeTarefa="Definir Tarefa", Descricao="Definir Ações", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="To Do" },
-            new Tarefa { TarefaId= 2, NomeTarefa="Fazendo Tarefa", Descricao="Definir Ações", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="Doing" },
-            new Tarefa { TarefaId= 3, NomeTarefa="Tarefa Finalizada", Descricao="Definir Ações", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="Done" },
-            new Tarefa { TarefaId= 4, NomeTarefa="Tarefa a Implementar", Descricao="Definir Ações", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="Ice Box" }
+            new Tarefa { TarefaId= 1, NomeTarefa="Reunião com o cliente", Descricao="Definir objetivo do negócio", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="To Do" },
+            new Tarefa { TarefaId= 2, NomeTarefa="Requisitos", Descricao="Levantamento de Requisitos", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="To Do" },
+            new Tarefa { TarefaId= 3, NomeTarefa="Design", Descricao="Elaborar Protótipos", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="Doing" },
+            new Tarefa { TarefaId= 4, NomeTarefa="Testes", Descricao="Testes de Integração", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="Done" },
+            new Tarefa { TarefaId= 5, NomeTarefa="Implantação", Descricao="Integração contínua e preparação de ambiente para implantação", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="Done" },
+            new Tarefa { TarefaId= 6, NomeTarefa="Otimização", Descricao="Análises e otimizações para melhorar o desempenho do sistema", DtInicio=DateTime.Today, DtFim=DateTime.Today, StatusTarefa="Ice Box" }
         };
 
         public IActionResult Index()
