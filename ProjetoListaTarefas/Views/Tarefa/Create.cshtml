@@ -48,9 +48,9 @@
             <li><a class="dropdown-item" href="#" onclick="updateStatus('To Do')">To Do</a></li>
             <li><a class="dropdown-item" href="#" onclick="updateStatus('Doing')">Doing</a></li>
             <li><a class="dropdown-item" href="#" onclick="updateStatus('Done')">Done</a></li>
-            <li><a class="dropdown-item" href="#" onclick="updateStatus('Done')">Ice Box</a></li>
+            <li><a class="dropdown-item" href="#" onclick="updateStatus('Ice Box')">Ice Box</a></li>
         </ul>
-        <input asp-for="StatusTarefa" class="dropdown" style="display: none;" />
+        <input asp-for="StatusTarefa" class="dropdown" name="StatusTarefa" style="display: none;" />
     </div>
     <span asp-validation-for="StatusTarefa" class="text-danger"></span>
     <br />
