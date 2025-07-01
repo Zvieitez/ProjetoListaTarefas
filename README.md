@@ -1,6 +1,5 @@
-Avaliação 04 - Impacta
 
-A avaliação consiste em:
+O projeto consiste em:
 
 - Criar um sistema para controle de lista de tarefas utilizando List<>;
 
